@@ -9,14 +9,16 @@ class BinaryGap {
         for (char bit: bits) {
             if (bit == '1') {
                 if (isOpenBit) { 
+                    if (maxGap < currentGap) {
+                        maxGap = currentGap;    
+                    }
+                    
                     currentGap = 0;
                 } else { 
                     isOpenBit = true;    
                 }
             } else if (isOpenBit && bit == '0') {
-                if (maxGap < ++currentGap) {
-                    maxGap = currentGap;    
-                }
+                currentGap++;
             }
         }
 
