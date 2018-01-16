@@ -1,11 +1,11 @@
 class Solution {
     
     public int[] solution(int[] array, int shift) {
+        if (array.length == 0) {
+            return array;
+        }
         if (shift > array.length) {
             shift = shift % array.length;    
-        }
-        if (shift == 0) {
-            return array;
         }
         
         int[] shiftedArray = new int[array.length];
