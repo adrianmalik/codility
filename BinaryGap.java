@@ -1,4 +1,4 @@
-class BinaryGap {
+public class BinaryGap {
     
     public int solution(int number) {
         int maxGap = 0;
