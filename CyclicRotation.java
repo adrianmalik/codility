@@ -1,4 +1,4 @@
-class CyclicRotation {
+publlic class CyclicRotation {
     
     public int[] solution(int[] array, int shift) {
         if (array.length == 0) {
@@ -15,5 +15,4 @@ class CyclicRotation {
         
         return shiftedArray;
     }
-    
 }
