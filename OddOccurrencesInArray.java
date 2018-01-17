@@ -1,7 +1,7 @@
 import java.util.Set;
 import java.util.HashSet;
 
-class OddOccurrencesInArray {
+public class OddOccurrencesInArray {
 
     public int solution(int[] numbers) {
         Set<Integer> numbersSet = new HashSet<>();
