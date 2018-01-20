@@ -1,22 +1,40 @@
-import java.util.stream.IntStream;
+import java.util.Arrays;
 
-class TapeEquilibrium {
-    
+public class TapeEquilibrium {
+
     public int solution(int[] numbers) {
-        int minDiff = Integer.MAX_VALUE;
+        int[] differences = new int[numbers.length - 1];
+        boolean[] changedLeftCalculationDirections = new boolean[numbers.length - 1];
+        boolean[] changedRightCalculationDirections = new boolean[numbers.length - 1];
 
-        int leftSum = 0;
-        int rightSum = IntStream.of(numbers).sum();
+        int sumFromLeft = 0;
+        int sumFromRight = 0;
+
         for (int i = 0; i < numbers.length - 1; i++) {
-            leftSum += numbers[i];
-            rightSum -= numbers[i];
+            sumFromLeft += numbers[i];
+            sumFromRight += numbers[numbers.length - 1 - i];
 
-            int diff = Math.abs(leftSum - rightSum);
-            if (minDiff > diff) {
-                minDiff = diff;
-            }
+            calculateDifference(differences, i, sumFromLeft, changedRightCalculationDirections, changedLeftCalculationDirections);
+            calculateDifference(differences, numbers.length - 2 - i, sumFromRight, changedLeftCalculationDirections, changedRightCalculationDirections);
         }
 
-        return minDiff;
+        Arrays.sort(differences);
+
+        return differences[0];
+    }
+
+    private void calculateDifference(int[] differences, int index, int sum, boolean[] changedSourceCalculationDirections, boolean[] changedDestionationCalculationDirections) {
+        if (changedSourceCalculationDirections[index]) {
+            if (differences[index] < sum) {
+                differences[index] = sum - differences[index];
+                changedSourceCalculationDirections[index] = false;
+            } else {
+                differences[index] = differences[index] - sum;
+            }
+        } else {
+            differences[index] += sum;
+        }
+
+        changedDestionationCalculationDirections[index] = true;
     }
 }
