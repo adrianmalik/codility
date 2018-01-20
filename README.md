@@ -11,3 +11,6 @@ Repository contains the following resolved codility tasks:
 #### Lesson 3 - Time Complexity
 * [100%] FrogJmp
 * [100%] TapeEquilibrium
+
+#### Lesson 4 - Counting Elements
+* ??? PermCheck
