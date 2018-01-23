@@ -14,3 +14,4 @@ Repository contains the following resolved codility tasks:
 
 #### Lesson 4 - Counting Elements
 * [100%] PermCheck
+* ??? MissingInteger
