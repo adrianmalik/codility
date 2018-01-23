@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class PermCheck {
   public int solution(int[] array) {
       Arrays.sort(array);
