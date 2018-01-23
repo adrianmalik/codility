@@ -13,4 +13,4 @@ Repository contains the following resolved codility tasks:
 * [100%] TapeEquilibrium
 
 #### Lesson 4 - Counting Elements
-* ??? PermCheck
+* [100%] PermCheck
